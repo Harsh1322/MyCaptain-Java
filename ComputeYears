@@ -1,0 +1,19 @@
+package computeyears;
+import java.util.*;
+public class ComputeYears {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the number of minutes:");
+        int min = s.nextInt();
+        int days= min/1440;
+        int yrs = days/365;
+        days%=365;
+        System.out.println(min+" minutes is approximately "+yrs+" years and "+days+" days.");
+    }    
+}
+Output:
+run:
+Enter the number of minutes:
+3456789
+3456789 minutes is approximately 6 years and 210 days.
+BUILD SUCCESSFUL (total time: 19 seconds)
