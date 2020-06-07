@@ -1,0 +1,29 @@
+package switchexample;
+import java.util.*;
+public class SwitchExample {
+    public static void main(String[] args) {
+        int choice;
+        System.out.println("Main Menu\n1.Heyy\n2.Hello\n3.Hiii\nEnter your choice:");
+        Scanner s= new Scanner(System.in);
+        choice= s.nextInt();
+        switch(choice){
+            case 1: System.out.println("You said Heyy");
+                    break;
+            case 2: System.out.println("You said Hello");
+                    break;
+            case 3: System.out.println("You said Hiii");
+                    break;
+            default:System.out.println("Invalid choice"); 
+        }
+    }
+}
+Output:
+run:
+Main Menu
+1.Heyy
+2.Hello
+3.Hiii
+Enter your choice:
+2
+You said Hello
+BUILD SUCCESSFUL (total time: 3 seconds)
