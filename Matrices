@@ -1,0 +1,79 @@
+package matrix;
+import java.util.*;
+public class Matrix {
+    public static void main(String[] args) {
+       Scanner s = new Scanner(System.in);
+       int x,y;
+       System.out.println("Enter the size of row and column of matrix:");
+       x= s.nextInt();
+       y=s.nextInt();
+       int a[][]=new int[x][y];
+       int b[][]=new int[x][y];
+       System.out.println("Enter the values of first array:");
+       inputvalues(a,x,y);
+       System.out.println("Enter the values of second array:");
+       inputvalues(b,x,y);
+       addmatrices(a,b,x,y);
+       multiplymatrices(a,b,x,y);
+    }
+    public static void inputvalues(int ar[][],int m,int n)
+    {
+        Scanner s= new Scanner(System.in);
+        for(int i=0;i<m;i++)
+            for(int j=0;j<n;j++)
+                ar[i][j]=s.nextInt();
+    }
+    public static void addmatrices(int ar[][],int arr[][],int m,int n)
+    {
+        int add[][]=new int[m][n];
+        for(int i=0;i<m;i++)
+            for(int j=0;j<n;j++)
+                add[i][j]=ar[i][j]+arr[i][j];
+        System.out.println("After matrix addition:");
+        printvalues(add,m,n);
+            }
+    public static void multiplymatrices(int ar[][],int arr[][],int m,int n)
+    {
+        int mul[][]=new int[m][n];
+        int sum,k=0;
+        while(k<m)
+        {
+            for(int i=0;i<m;i++){
+                sum=0;
+                for(int j=0;j<n;j++){
+                    sum+=(ar[k][j]*arr[j][i]);
+                }
+                mul[k][i]=sum;
+            }
+            ++k;
+        }
+        System.out.println("After matrix multiplication:");
+        printvalues(mul,m,n);
+    }
+    public static void printvalues(int ar[][],int m,int n)
+    {
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                System.out.print(ar[i][j]+ " ");
+            }
+            System.out.println();
+        }
+    }
+}
+Output:
+run:
+Enter the size of row and column of matrix:
+3 3
+Enter the values of first array:
+1 3 4 2 4 3 3 4 5
+Enter the values of second array:
+1 3 4 2 4 3 1 2 4
+After matrix addition:
+2 6 8 
+4 8 6 
+4 6 9 
+After matrix multiplication:
+11 23 29 
+13 28 32 
+16 35 44 
+BUILD SUCCESSFUL (total time: 41 seconds)
