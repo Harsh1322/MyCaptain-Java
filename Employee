@@ -1,0 +1,80 @@
+package employee;
+import java.util.*;
+public class Employee {
+    String name;
+    String address;
+    int year,salary;
+    public static void getinput(Employee obj){
+        Scanner s= new Scanner(System.in);
+        obj.name = new String();
+        obj.address=new String();
+        System.out.println("Enter the name of Employee:");
+        obj.name=s.nextLine();
+        System.out.println("Enter the year of joining of Employee:");
+        obj.year=s.nextInt();
+         System.out.println("Enter the salary of Employee:");
+        obj.salary=s.nextInt();
+        System.out.println("Enter the address of Employee:");
+        obj.address=s.next();
+        
+    }
+    public static void printinput(Employee obj){
+        System.out.println("Name: "+obj.name+"\nYear of joining: "+obj.year+"\nAddress: "+obj.address+"\nSalary: "+obj.salary);
+    }
+    public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter the number of employee's reccord you want to enter:");
+    int n = s.nextInt();
+    Employee obj[]=new Employee[n];
+    int i;
+    for(i=0;i<n;i++){
+        obj[i]= new Employee();
+        getinput(obj[i]);
+    }
+    System.out.println("\tEmployee Details:-");
+    for(i=0;i<n;i++){
+    printinput(obj[i]);
+    }
+    }
+}
+Output:
+Enter the number of employee's reccord you want to enter:
+3
+Enter the name of Employee:
+Robert
+Enter the year of joining of Employee:
+1994
+Enter the salary of Employee:
+50000
+Enter the address of Employee:
+64C- WallsStreet
+Enter the name of Employee:
+Sam
+Enter the year of joining of Employee:
+2000
+Enter the salary of Employee:
+42000
+Enter the address of Employee:
+68D- WallsStreet
+Enter the name of Employee:
+John
+Enter the year of joining of Employee:
+1999
+Enter the salary of Employee:
+30000
+Enter the address of Employee:
+26B- WallsStreet
+	Employee Details:-
+Name: Robert
+Year of joining: 1994
+Address: 64C-
+Salary: 50000
+Name: Sam
+Year of joining: 2000
+Address: 68D-
+Salary: 42000
+Name: John
+Year of joining: 1999
+Address: 26B-
+Salary: 30000
+BUILD SUCCESSFUL (total time: 1 minute 46 seconds)
