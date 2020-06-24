@@ -1,0 +1,25 @@
+package primenumber;
+import java.util.*;
+public class PrimeNumber {
+    public static void main(String[] args) {
+        Scanner s= new Scanner(System.in);
+        int num,check=1;
+        System.out.println("Please insert any number:");
+        num=s.nextInt();
+        for(int i=2;i<num;i++){
+          if(num%i==0){
+            check=0;
+            System.out.println(num+" is not a prime number.");
+            java.lang.System.exit(0);
+          }
+        }
+        System.out.println(num+" is a prime number.");
+    }
+    
+}
+Output:
+run:
+Please insert any number:
+3
+3 is a prime number.
+BUILD SUCCESSFUL (total time: 3 seconds)
